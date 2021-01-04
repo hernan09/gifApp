@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-
+import GiffExpertApp from './Components/GiffExpertApp/default';
+// KkQrrNh7pTtepc4lfgruwaHAm2uOICEV la api de giphy
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-header">
+        <GiffExpertApp></GiffExpertApp>
+      </div>
+      <div className="App-section"></div>
+      <div className="App-footer"></div>
     </div>
   );
 }
