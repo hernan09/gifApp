@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Particles from 'react-particles-js';
 import './__index.css';
 
 const AddCategory = ({ setCategorias }) => {
   const [inputValue, setInputValue] = useState('');
+  const [displayParticles, setdisplayParticles] = useState('none');
+
+  useEffect(() => {
+    console.log('probando');
+    if (window.innerWidth >= 450) {
+      console.log('menor a 450', displayParticles);
+      setdisplayParticles(displayParticles == 'block');
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -18,33 +27,36 @@ const AddCategory = ({ setCategorias }) => {
   };
   return (
     <div className="container__search__header">
-      <Particles
-        width="100%"
-        height="100vh"
-        params={{
-          particles: {
-            line_linked: {
-              shadow: {
-                enable: true,
-                color: '#3CA9D1',
-                blur: 5,
+      <div className={`visibility__${displayParticles}`}>
+        <Particles
+          width="100%"
+          height="100vh"
+          params={{
+            particles: {
+              line_linked: {
+                shadow: {
+                  enable: true,
+                  color: '#3CA9D1',
+                  blur: 5,
+                },
               },
             },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
+
       <form onSubmit={handleSubmit}>
-        <div class="searchBox">
+        <div className="searchBox">
           <input
-            class="searchInput"
+            className="searchInput"
             value={inputValue}
             onChange={handleInputChange}
             type="text"
             name=""
             placeholder="Search"
           />
-          <button class="searchButton" href="#">
-            <i class="material-icons">search</i>
+          <button className="searchButton" href="#">
+            <i className="material-icons">search</i>
           </button>
         </div>
       </form>

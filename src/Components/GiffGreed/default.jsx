@@ -13,15 +13,15 @@ const GiffGridd = ({ categoria }) => {
 
       {images.map((img) => {
         return (
-          <div class="containerr">
-            <div class="card">
-              <div class="face face1">
-                <div class="content">
+          <div className="containerr">
+            <div className="card">
+              <div className="face face1">
+                <div className="content">
                   <img src={img.url} />
                 </div>
               </div>
-              <div class="face face2">
-                <div class="content">
+              <div className="face face2">
+                <div className="content">
                   <p>{img.title}</p>
                   <a href="#">
                     <FacebookIcon size={32} url={img.url}></FacebookIcon>
